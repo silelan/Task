@@ -1,10 +1,10 @@
 # Django Task
 
-##Requirements
+## Requirements
 
-   . Python (3.5, 3.6)
-   . Django (2.0, 2.2)
-   . Django REST Framework (3.6)
+   1. Python (3.5, 3.6)
+   2. Django (2.0, 2.2)
+   3. Django REST Framework (3.6)
 
 ## Installation
 
@@ -25,4 +25,4 @@
     2. Run command python manage.py runserver
 
 
-![image](/home/mads_studio/Pictures/Screenshot from 2019-10-12 17-58-51.png)
+/home/mads_studio/Pictures/Screenshot from 2019-10-12 17-58-51.png
