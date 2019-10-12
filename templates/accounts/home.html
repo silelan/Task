@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <h1>Hi {{user.username}}!</h1><p class="lead">You Are Login Now...</p>
+<p><a href="{% url 'logout' %}" class="btn btn-danger">Logout</a></p>
+<ul>
+	{% for user_p in users %}
+		<li><a href="{{ user_p.get_absolute_url }}">{{ user_p }}</a></li>
+	{% endfor %}
+</ul>
+{% else %}
+<p class="lead">You are not logged in</p>
+<a href="{% url 'login' %}" class="btn btn-success">Login</a>  |  
+<a href="{% url 'signup' %}" class="btn btn-primary">signup</a>
+{% endif %}
+{% endblock %}
