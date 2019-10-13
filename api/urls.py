@@ -9,10 +9,11 @@ urlpatterns = [
     path('profile/', ProfileViewList.as_view()),
     path('profile/<int:pk>/', ProfileViewDetail.as_view()),
     path('rest-auth/', include('rest_auth.urls')),
-    path('rest-auth/registration/', include('rest_auth.registration.urls')),
-    path('account-confirm-email/', VerifyEmailView.as_view(),
-     name='account_email_verification_sent'),
-    path('account-confirm-email/(?P<key>[-:\w]+)/', VerifyEmailView.as_view(),
-     name='account_confirm_email'),
+    path('rest-auth/registration/signup/', RegistrationView.as_view()),
+ #   path('rest-auth/registration/', include('rest_auth.registration.urls')),
+ #   path('account-confirm-email/', VerifyEmailView.as_view(),
+ #    name='account_email_verification_sent'),
+  #  path('account-confirm-email/(?P<key>[-:\w]+)/', VerifyEmailView.as_view(),
+  #   name='account_confirm_email'),
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)

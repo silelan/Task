@@ -147,3 +147,7 @@ SITE_ID = 1
 MEDIA_URL = '/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR, "media")
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+REST_AUTH_REGISTER_SERIALIZERS = {
+        'REGISTER_SERIALIZER': 'api.serializers.RegisterSerializer',
+}
+ACCOUNT_USERNAME_REQUIRED = False

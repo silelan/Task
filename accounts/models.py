@@ -45,7 +45,7 @@ class Profile(models.Model):
     USERNAME_FIELD = 'user.email'
     REQUIRED_FIELDS = []
 
-    def __str__(self, name): 
+    def __str__(self): 
         return self.user.username
 
     def get_absolute_url(self):

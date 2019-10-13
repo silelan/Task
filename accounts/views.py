@@ -17,7 +17,20 @@ from django.contrib.auth.decorators import login_required
 class HomeView(View):
     template_name = 'accounts/home.html'
     def get(self, request):
-        return render(request, self.template_name)
+        people = Profile.objects.all()
+        context = {
+            'people':people
+        }
+        return render(request, self.template_name,context)
+
+class ProfileView(View):
+    template_name = 'accounts/profile.html'
+    def get(self, request):
+        people = Profile.objects.all()
+        context = {
+            'people':people
+        }
+        return render(request, self.template_name,context)
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm

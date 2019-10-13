@@ -27,7 +27,7 @@ class ProfileAdmin(admin.ModelAdmin):
         
     print(name)
     readonly_fields = ["profile_picture_preview"]
-    search_fields = ('name',)
+    search_fields = ('user',)
     list_filter = ('gender','permanent_address')
 
     def profile_picture_preview(self, obj):

@@ -6,6 +6,10 @@ from rest_framework.authentication  import BasicAuthentication, TokenAuthenticat
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework import generics
+from rest_auth.registration.views import RegisterView
+
+class RegistrationView(RegisterView):
+  serializer_class = RegisterSerializer
 
 class ProfileViewList(generics.ListCreateAPIView):
     authentication_classes = [BasicAuthentication, TokenAuthentication]
