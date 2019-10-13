@@ -22,7 +22,13 @@
 ## Runserver
 
     1. Open terminal in Project directory using ctr+alt+T
-    2. Run command python manage.py runserver
+    2. Run command python manage.py runserver 8888
 
 
-/home/mads_studio/Pictures/Screenshot from 2019-10-12 17-58-51.png
+## Rest Api Postman Links
+
+    . http://127.0.0.1:8888/api/profile/1/
+    . http://127.0.0.1:8888/api/profile
+    . http://127.0.0.1:8888/api/rest-auth/login/
+    . http://127.0.0.1:8888/api/rest-auth/logout/
+    . http://127.0.0.1:8888/api/rest-auth/registration/
