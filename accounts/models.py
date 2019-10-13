@@ -49,7 +49,7 @@ class Profile(models.Model):
         return self.user.username
 
     def get_absolute_url(self):
-    	return "/users/{}".format(self.slug)
+    	return "/profile/{}".format(self.slug)
 
 @receiver(post_save, sender=CustomUser)
 def create_user_profile(sender, instance, created, **kwargs):

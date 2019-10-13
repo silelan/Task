@@ -12,10 +12,11 @@
 		{% for data in people %}
 		<div class="col-md-6">
 			{% if data.profile_picture %}		
-			<img src="{{ data.profile_picture.url }}"class="img-responsive rounded-circle pr-2" alt=""style="height: 50px;">
+				<img src="{{ data.profile_picture.url }}"class="img-responsive rounded-circle pr-2" alt=""style="height: 50px;">
 			{% endif %}
 			<a href="{{ data.get_absolute_url }}" class="pr-4">{{ data.user.username }}</a><br>
 			<p class="text-primary text-justify">{{ data.permanent_address }}</p>
+			<p class="text-primary text-justify">{{ data.friends }}</p>
 			<button class="btn btn-primary">Add Friend</button>
 			<button class="btn btn-danger">Remove</button>
 			<br><br>
