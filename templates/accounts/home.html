@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+    <h1>Hi {{user.username}}!</h1><p class="lead">You Are Login Now...</p>
+<p><a href="{% url 'logout' %}" class="btn btn-danger">Logout</a></p>
+<div class="container">
+	<div class="row">
+		{% for data in people %}
+		<div class="col-md-6">
+			{% if data.profile_picture %}		
+				<img src="{{ data.profile_picture.url }}"class="img-responsive rounded-circle pr-2" alt=""style="height: 50px;">
+			{% endif %}
+			<a href="{{ data.get_absolute_url }}" class="pr-4">{{ data.user.username }}</a><br>
+			<p class="text-primary text-justify">{{ data.permanent_address }}</p>
+			<p class="text-primary text-justify">{{ data.friends }}</p>
+			<button class="btn btn-primary">Add Friend</button>
+			<button class="btn btn-danger">Remove</button>
+			<br><br>
+		</div>
+	{% endfor %}
+	</div>
+</div>
+{% else %}
+<p class="lead">You are not logged in</p>
+<a href="{% url 'login' %}" class="btn btn-success">Login</a>  |  
+<a href="{% url 'signup' %}" class="btn btn-primary">signup</a>
+{% endif %}
+{% endblock %}

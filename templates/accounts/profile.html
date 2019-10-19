@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if user.is_authenticated %}
+    <h1>Hi {{user.username}}!</h1><p class="lead">You Are Login Now...</p>
+<p><a href="{% url 'logout' %}" class="btn btn-danger">Logout</a></p>
+<div class="jumbotron">
+	<div class="row">
+	{% if profile %}
+		<div class="col-md-6">
+			{% if profile.profile_picture %}		
+				<img src="{{ profile.profile_picture.url }}"class="img-responsive rounded pr-2" alt=""style="height: 200px;">
+			{% endif %}
+		</div>
+
+		<div class="col-md-6">
+			<h1 class="text-primary">{{ profile.user.username }}</h1><br>
+			<p class="text-primary text-justify">{{ profile.permanent_address }}</p>
+			<p>{{ profile.gender }}</p>
+			<button class="btn btn-primary">Add Friend</button>
+			<button class="btn btn-danger">Remove</button>
+		</div>
+	{% endif %}
+	</div>
+</div>
+{% endif %}
+
+{% endblock %}
+
