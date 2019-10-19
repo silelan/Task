@@ -6,4 +6,4 @@ django_countries
 gunicorn==19.6.0
 dj-database-url==0.5.0
 whitenoise==4.0
-psycopg2==2.8.3
+psycopg2-binary==2.8.3
